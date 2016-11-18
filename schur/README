@@ -1,0 +1,18 @@
+This is SCHUR, an interactive program for calculating properties of Lie
+groups and symmetric functions.
+
+Current version is 6.10.
+
+See readme.html for details.
+
+Quick Install with the .tar.gz version :
+	- if you are root : ./configure ; make install
+	- else : ./configure --prefix some-directory ; make install
+	In the second case, you will to change directory to some-directory/bin
+	to execute ./schur
+
+Compilation problems :
+	readline : you need readline headers & libraries AND ncurses headers & libraries to compile SCHUR
+
+Uninstall : 
+	make uninstall 

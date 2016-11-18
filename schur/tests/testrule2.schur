@@ -1,0 +1,11 @@
+gr o32
+setrv1 21
+dim[rv1]
+gr 2sp8sp4
+rule[rv1*0]sk1with c
+rule last sum i1eq2
+rule last sk1with b
+rule last sk2with b
+sup f
+std last
+dim last

@@ -1,0 +1,66 @@
+.\" 
+.\" Copyright (c) 2012 Franck Butelle and Frederic Toumazet
+.\" All rights reserved.
+.\" 
+.\" Permission is granted to copy, distribute and/or modify this
+.\" document under the terms of the GNU Free Documentation License,
+.\" Version 1.1 or any later version published by the Free Software
+.\" Foundation; with no Invariant Sections, with no Front-Cover Texts, and
+.\" with no Back-Cover Texts.  A copy of the license is included in the
+.\" package.
+.\" 
+.TH "SCHUR" "1" "6.09, October 2013" "F. Butelle" "User Commands"
+.SH "NAME"
+schur \- An Interactive Program For Calculating Properties Of
+Lie Groups and Symmetric Functions
+.SH "SYNOPSIS"
+.B schur
+[\fIOPTION\fR]
+.SH "DESCRIPTION"
+.\" Add any additional description here
+.PP 
+Schur is a stand alone C program for interactively calculating properties of
+Lie groups and symmetric functions. Schur has been designed to answer questions
+of relevance to a wide range of problems of special interest to chemists,
+mathematicians and physicists \- particularly for persons who need specific
+knowledge relating to some aspect of Lie groups or symmetric functions and
+yet do not wish to be encumbered with complex algorithms. The objective of
+Schur is to supply results with the complexity of the algorithms hidden from
+view so that the user can effectively use Schur as a scratch pad, obtaining
+a result and then using that result to derive new results in a fully
+interactive manner. Schur can be used as a tool for calculating branching
+rules,  Kronecker products, Casimir invariants, dimensions, plethysms,
+S\-function operations, Young diagrams and their hook lengths etc.
+.PP 
+.TP 
+\fB\-d, \-\-debug\fR
+activate debugging (same as using command SB_DEBUG TRUE)
+.TP
+\fB\-f filename\fR
+use filename as a SCHUR script. 
+.TP 
+\fB\-h, \-\-help\fR
+display help and exit
+.TP
+\fB\-q, \-\-quiet\fR
+suppress initial frame and try to be less verbose, useful for scripts
+.TP 
+\fB\-v, \-\-version\fR
+output version information and exit
+
+.SH "AUTHOR"
+Originally Written by Brian G. Wybourne, now developped by Franck Butelle,
+Ronald C. King and Frederic Toumazet.
+.SH "REPORTING BUGS"
+Report bugs to 
+<Franck.butelle@lipn.fr> and <toumazet@univ-mlv.fr>.
+.SH "COPYRIGHT"
+Copyright \(co 1996 Brian G. Wybourne,
+2006- Franck BUTELLE, Ronald C. KING & Frederic TOUMAZET
+.br 
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+.SH "SEE ALSO"
+The full documentation for
+.B schur
+is maintained as a PDF manual distributed with the software.

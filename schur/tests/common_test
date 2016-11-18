@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# params = SCHUROOT(=SCHURLIB) builddir filename
+
+SCHUR=$2
+SRC=$3
+SCHURLIB=$1
+export SCHURLIB
+COLUMNS=67
+export COLUMNS
+
+if test -r $SRC; then
+	if  test `grep -c 'Example' $SRC` -eq 0 ; then
+	  echo no example found
+	  exit 1
+	else  
+	localfic=`basename $SRC`
+	fic=/tmp/$localfic
+	./extract_example  $SRC $fic.cmds $fic.exp
+	# there is a strange difference on some systems
+	# between ${SCHUR} < $fic.cmds and cat $fic.cmds | ${SCHUR} !!
+	 ${SCHUR} < $fic.cmds  | ./trim > $fic.res
+	# cat $fic.cmds | ${SCHUR} | ./trim > $fic.res
+	  if test -r filename ; then # file name used in examples
+	    /bin/rm filename
+	  fi
+	  if test -r testfile.tst ; then # file name used in examples
+	    /bin/rm testfile.tst
+	  fi
+
+	  if diff -b  $fic.exp $fic.res >$fic.diff ; then
+	    rm $fic.{cmds,res,exp,diff}
+	    rm $localfic 
+	    echo OK
+	  else
+	    cat $fic.diff
+	    echo ": "`grep '<' $fic.diff | wc -l`' differences (?)'
+	    # rm $fic.{cmds,res,exp,diff}
+	    exit 1
+	  fi
+	fi
+else
+  echo file $SRC NOT FOUND.
+  exit 1
+fi

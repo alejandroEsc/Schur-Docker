@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# params = SCHUROOT(=SCHURLIB) builddir 
+
+SCHURLIB=$1
+export SCHURLIB
+SCHUR=$2
+COLUMNS=67
+export COLUMNS
+SUPPR=0
+
+echo "specialTests... may be long..."
+if [ ! -e testrule.schur ]; then
+	cp $1/tests/test*.schur .
+	SUPPR=1
+fi
+${SCHUR} < $1/tests/specialTest.cmds | ./trim > specialTest.res
+if diff -w specialTest.res $1/tests/specialTest.expected > specialTest.diff ; then
+	rm specialTest.{res,diff}
+	if [ A${SUPPR} == A1 ]; then
+	       	rm -f test*.schur
+	fi
+else
+	echo "There is a problem in specialTests"
+	cat specialTest.diff
+	echo ": "`grep '<' specialtest.diff | wc -l`' differences (?)'
+	exit 1
+fi
+

@@ -1,0 +1,31 @@
+* Q-functions: bug in o_q ?
+
+* add more examples/description/ tests 
+
+* Create a new 26 branching rule.
+
+* Code cleaning:
+	- still some variable declarations in blocks
+	- still some memory leak (some may be detected by heapstatus and some not) ?
+
+* trap signal 
+	- to interrupt long calculation and be able to save current state...
+
+* Maple, SAGE, etc. output
+	Some code exists for Maple output, but it must be checked
+
+* library form
+	convert schur in a library (at least partially).
+
+* Graphical interface
+	to be OS independant may use a web browser and consider Schur as a kind of local web server
+        producing MathML output (for example).
+
+* Convert the manual bibliography into BibTeX format.
+	there is 159 entries actually in the bibliography, and all entries are not called in the text
+	refresh bibliography as well
+
+* include manual directory into autoconf system 
+	- not important, partially done
+
+* Introduce some priorities in this TODO list !

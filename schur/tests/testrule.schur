@@ -1,0 +1,10 @@
+gr 2sp6sp6
+setrv 1 21 
+setrv 2 31
+dim[rv1*rv2]
+rule[rv1*rv2]sum sk1sk2
+cont1,2 o last
+sup f
+std last
+dim last
+stop

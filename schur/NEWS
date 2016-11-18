@@ -1,0 +1,6 @@
+everything is in ChangeLog and manual/
+
+as of november 2005, SCHUR is delivered under the GPL licence.
+
+A doxygen documentation of the source code is available simply type 
+make documentation (work in progress)

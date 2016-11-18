@@ -1,0 +1,55 @@
+
+[Setup]
+AppCopyright=B.G.Wybourne,F.Butelle,R.King,F.Toumazet
+AppName=SCHUR
+AppVerName=SCHUR @VERSION@
+LicenseFile=doc\License.txt
+;CreateAppDir=false
+DefaultDirName={pf}\SCHUR
+; AllowNoIcons=true
+ShowLanguageDialog=yes
+OutputDir=public
+OutputBaseFilename=SCHUR@VERSION@-setup
+AppendDefaultDirName=false
+
+[Dirs]
+Name: "{app}\share"
+Name: "{app}\share\schur"
+Name: "{app}\bin"
+Name: "{app}\usr\share\terminfo"
+
+
+[Files]
+Source: bin\schur.exe; DestDir: {app}\bin
+Source: share\schur\help\*; DestDir: {app}\share\schur\help
+Source: bin\*.dll; DestDir: {app}\bin
+Source: schur.ico; DestDir: {app}\share
+Source: share\schur\dat\*; DestDir: {app}\share\schur\dat
+Source: doc\schur_manual.pdf; DestDir: {app}\share\schur\doc
+Source: doc\Authors.txt; DestDir: {app}\share\schur\doc
+Source: usr\share\terminfo\6c\*; DestDir: {app}\usr\share\terminfo\6c
+Source: usr\share\terminfo\61\*; DestDir: {app}\usr\share\terminfo\61
+Source: usr\share\terminfo\63\*; DestDir: {app}\usr\share\terminfo\63
+Source: usr\share\terminfo\78\*; DestDir: {app}\usr\share\terminfo\78
+Source: usr\share\terminfo\a\*; DestDir: {app}\usr\share\terminfo\a
+Source: usr\share\terminfo\c\*; DestDir: {app}\usr\share\terminfo\c
+Source: usr\share\terminfo\l\*; DestDir: {app}\usr\share\terminfo\l
+Source: usr\share\terminfo\x\*; DestDir: {app}\usr\share\terminfo\x
+
+
+[Tasks]
+Name: desktopicon; Description: "Create a &desktop icon"; GroupDescription: "Additional icons:"
+Name: "quicklaunchicon"; Description: "Create a &Quick Launch icon"; GroupDescription: "Additional icons:"; Flags: unchecked
+
+[Icons]
+Name: "{userappdata}\Microsoft\Internet Explorer\Quick Launch\SCHUR-@VERSION@"; Filename: "{app}\bin\schur.exe"; Tasks: quicklaunchicon
+Name: "{userdesktop}\SCHUR-@VERSION@";  Filename: "{app}\bin\schur.exe";  IconFilename: "{app}\share\schur.ico"; Tasks: desktopicon
+
+[Registry]
+Root: HKLM; Subkey: Software\SCHUR\Settings; ValueType: string; ValueName: SCHURLIB; ValueData: {app}; Flags: uninsdeletekey deletekey
+
+[Run]
+Filename: "{app}\bin\schur.exe"; Description: "Launch application"; Flags: postinstall nowait skipifsilent unchecked
+
+
+

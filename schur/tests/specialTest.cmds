@@ -1,0 +1,62 @@
+sfn
+o 0,0
+o 0,321
+o 1,321
+o321,0
+o321,1
+o21,-2
+o-21,-21
+o !100 , !100
+o !199 , 1
+conj last
+conj 1^!200
+conj last
+mult_p 20 !10
+setsv1 o21,-21
+sv1
+o sv1,21
+add o21,-21,o21,21
+sk sv1,21
+sk sv1,-21
+sk last,21
+sk 321,a
+sk 321,b
+sk 321,c 
+sk 321,d 
+sk 321,e
+sk 321,f
+sk 321,g
+sk 321,h 
+sk 321,l
+sk 321,m
+1111+&
+2222+3333+&
+4444+5555+6666+7777+8888+9999&
+4444+5555+6666+7777+8888+9999+1+2+3+4+5+6+7+8+9+11+22+33+44+55+66+77+88+99+111+222+333+444
+setsv1 &
+1111+2222+3333+4444+5555+6666+7777+8888+9999+111+222+333+444+555+666+777+888+999+11111+22222+33333+44444+55555+66666+77777+88888+99999+111111+222222+333333+444444+555555+666666+777777+888888+999999+1
+sv1
+REM return to DPrepMode, to try examples from the manual
+exit
+gr u20
+dim[1^!14 ]
+br5 2 10 gr1[1^!14 ]
+gr2 su2 su10
+std last
+au gr1so3,last
+setv1,last
+v1
+gr su10
+br8 2 8 gr1[2^7]
+uonediv10gr1uoneadd28gr1last
+gr su8
+br8 4 4 gr1[2^5]
+uonediv8gr1uoneadd40gr1last
+rem ../tests needed for make distcheck to work
+readfn 1 'testrule.schur'
+fn1
+readfn 2 'testrule2.schur'
+fn2
+readfn 3 'testrule3.schur'
+fn3
+end

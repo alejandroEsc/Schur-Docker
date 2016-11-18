@@ -1,0 +1,23 @@
+rem Answer to question 6 (chap. 7)
+gr u64
+setrv1 21
+dim[rv1]
+gr7u8u8u8u8u8u8u8
+rule[1^2*rv1*0*1^3*0*0*0]sk2with m
+rule last sum sk2conj5
+rule last ch_phase5
+rule last sum i2eq3
+cont1,2pl last
+cont1,2last
+rule last sum sk3eq4
+cont2,3pl last
+cont1,2last
+rule last sum i2eq3
+cont1,2last
+cont1,2last
+gr s8
+rule last i_pl1
+sup false
+rule last make1,8
+dim last
+stop
