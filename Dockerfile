@@ -1,8 +1,8 @@
-FROM gcc:4.9
+#FROM sourceryinstitute/docker-base:latest as schur
+#RUN  apt-get update && apt-get install flex libreadline6-dev -y
+FROM frolvlad/alpine-gcc as schur
+RUN apk update && apk add flex readline-dev make ncurses-dev
 COPY ./schur /usr/src/schur
 WORKDIR /usr/src/schur
-RUN ./configure
-RUN make
-RUN make install
-CMD ["schur"]
-
+RUN  ./configure && make install
+ENTRYPOINT ["schur"] 
